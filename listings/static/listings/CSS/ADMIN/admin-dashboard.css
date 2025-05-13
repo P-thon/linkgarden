@@ -1,0 +1,199 @@
+.my_wrapper {
+    padding:15px;
+    min-width: 350px;
+}
+
+.mt15 {
+    margin-top: 15px;
+}
+
+.ml10 {
+    margin-left: 10px;
+}
+
+.simple_flex {
+    display: flex;
+}
+
+.mb10after1075 {
+    margin-bottom: 10px;
+}
+
+.delete_button {
+    opacity: 0.3;
+}
+
+.delete_button:hover {
+    opacity: 1;
+}
+
+.card-header {
+    border-color: #EEEEEE;
+    position: relative;
+    background: transparent;
+    padding: 0rem 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.container_popup {
+    background-color:white;
+    max-width:800px;
+    width: 80%;
+    position: fixed;
+    z-index:301;
+    top: 33%;
+    min-height: 300px;
+    border-radius: 10px;
+    padding: 20px 15px;
+}
+
+.closebtn {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    font-size: 20px;
+    color:black;
+    border:none;
+    padding: 8px;
+    background: none;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.add_todo {
+    flex-grow: 1;
+    padding: 10px 16px;
+    border-radius: 5px;
+    outline: none;
+    background-color: #F1F0F6;
+    border: none;
+    transition: all 0.3s ease;
+    width: 70%;
+    color: var(--primary);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.popup_title {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.content_popup {
+    text-align: left;
+    padding-top: 20px;
+}
+
+.tc {text-align: center;}
+.button_position {padding-top: 30px;}
+
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    border: none;
+    color: #fff;
+    overflow: hidden;
+}
+.container_background {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.95);
+    overflow-x: hidden;
+    transition: 0.5s;
+    width: 100%;
+    min-width: 185px;
+}
+.btn-11:hover {
+text-decoration: none;
+color: #fff;
+}
+.btn-11:before {
+position: absolute;
+content: '';
+display: inline-block;
+top: -180px;
+left: 0;
+width: 30px;
+height: 100%;
+background-color: #fff;
+}
+.btn-11:hover{
+opacity: .7;
+}
+.btn-11:active{
+box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+-4px -4px 6px 0 rgba(116, 125, 136, .2), 
+inset -4px -4px 6px 0 rgba(255,255,255,.2),
+inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+.btn-red {
+background: red;
+color: #ffffff;
+}
+
+.mt0 {
+    margin-top: 0px;
+}
+
+.btn-gray {
+background: gray;
+color: #ffffff
+}
+
+.btn-blue {
+background: #2d93f3;
+color: #ffffff
+}
+
+.personalised_btn {
+    width: 70%;
+    margin-top: 30px;
+}
+
+@media (max-width: 1075px) {
+    .mb10after1075 {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 750px) {
+    .popup_title {
+        padding-top: 30px;
+    }
+}
+
+@media (max-width:500px) {
+    .width100at500 {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .add_todo {
+        margin-top: 10px;
+        width: 100%;
+    }
+    .personalised_btn {
+        width: 100%;
+        margin-top: 15px;
+    }
+}

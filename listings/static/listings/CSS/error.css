@@ -1,0 +1,45 @@
+/* ------------------------ */
+/* Header Personalisation : */
+.main-header-container .header-wrapper {border-bottom: 1px solid var(--primary);}
+.main-header-container .header-wrapper ul.nav-list li a {color:var(--primary);}
+.main-header-container .header-wrapper ul.nav-list li a::after {background: var(--primary);}
+.main-header-container .header-logo-blue {display: none;}
+/* ------------------------ */
+.main-error-container .text {background: var(--background);color: var(--pure);font-size: 30px;font-weight: bold;margin: 0 auto;padding: 10px;width: auto;text-align: center;mix-blend-mode: screen;margin-top: 40px; margin-bottom: 40px; border-radius: 5px;}
+.main-error-container .containerTab {max-width: 1200px; width: 90%; padding: 20px;margin:auto;margin-top: 50px; margin-bottom: 20px; margin-bottom: 200px;}
+.main-error-container .glasscard{background-color: rgba(255,255,255,0.06);border-radius: 10px;box-shadow: 0px 10px 20px rgba(0,0,0,0.2);backdrop-filter: blur(15px);}
+.main-error-container .custom-btn {min-width: 215px; margin-top: 40px; margin-bottom: 40px; width: 100%; max-width: 350px;height: 40px;color: #fff;border-radius: 5px;padding: 10px 25px;font-family: 'Lato', sans-serif;font-weight: 500; font-size: 20px; background: transparent;cursor: pointer;transition: all 0.3s ease;position: relative;display: inline-block;box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),7px 7px 20px 0px rgba(0,0,0,.1),4px 4px 5px 0px rgba(0,0,0,.1);outline: none;}
+.main-error-container .btn-11 {border: none;background: var(--background);color: #fff;overflow: hidden;}
+.main-error-container .btn-11:hover {text-decoration: none;color: #fff;}
+.main-error-container .btn-11:before {position: absolute;content: '';display: inline-block;top: -180px;left: 0;width: 30px;height: 100%;background-color: #fff;animation: shiny-btn1 3s ease-in-out infinite;}
+.main-error-container .btn-11:hover{opacity: .7;}
+.main-error-container .btn-11:active{box-shadow: 4px 4px 6px 0 rgba(255,255,255,.3), -4px -4px 6px 0 rgba(116, 125, 136, .2), inset -4px -4px 6px 0 rgba(255,255,255,.2),inset 4px 4px 6px 0 rgba(0, 0, 0, .2);}
+.main-error-container .main-snake-container {max-width: 600px;}
+.main-error-container #svg_current_error {height: auto; width: 75%; max-width: 500px; max-height: 400px;}
+.main-error-container #snake {margin-top: 15px;}
+.main-error-container #replay {font-size: 10px;padding: 10px 20px;background: #181825;border: none;color: white;border-radius: 20px;font-weight: 800;transform: rotate(270deg);cursor: pointer;transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);}
+.main-error-container #replay:hover {background: #a6aab5;background: #4cffd7;transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);}
+.main-error-container #replay svg {margin-right: 8px;}
+.main-error-container .wrapper {display: flex;flex-flow: row wrap;align-items: center;margin-bottom: 5px;}
+.main-error-container #canvas {background-color: #181825;}
+.main-error-container .container_snake {display: flex;width: 100%;height: 100%;flex-flow: column wrap;justify-content: center;}
+.main-error-container #ui {display: flex;align-items: center;font-size: 10px;flex-flow: column;margin-left: 10px;}
+.main-error-container h2 {font-weight: 200;transform: rotate(270deg);color:#181825;}
+.main-error-container #score {margin-top: 20px;font-size: 30px;font-weight: 800;color: #181825;}
+.main-error-container .noselect {user-select: none;}
+.main-error-container .container-desc {margin-top:40px;text-align: center; color: var(--primary); padding: 0px 20px;}
+.main-error-container .show-at-400 {font-weight: normal;font-size: 20px;display: none;background: var(--background);color: var(--pure);margin: 0 auto;padding: 10px;width: auto;text-align: center;mix-blend-mode: screen;margin-top: 40px; margin-bottom: 40px; border-radius: 5px;}
+@keyframes shiny-btn1 {0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }}
+@media (max-width:1225px){
+    .main-error-container #svg_current_error {max-width: 400px;max-height: 460px;}}
+@media (max-width:1125px){
+    .main-error-container .container-desc {text-align: justify;max-width: 500px;}}
+@media (max-width:675px){
+    .main-error-container .text {font-weight: normal;}
+    .main-error-container .text {font-size: 20px;}
+    .main-error-container .custom-btn { width: 50%;}}
+@media (max-width:420px){
+    .main-error-container .container-desc {font-size: 14px;}
+    .main-error-container .show-at-400 {display: block;}
+    .main-error-container .hide-at-400 {display: none;}}
+/* ------------------------ */

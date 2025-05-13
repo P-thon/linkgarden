@@ -1,0 +1,169 @@
+{% extends 'listings/admin/main.html' %}
+{% load static %}
+{% block head_inject %}
+<link rel="stylesheet" href="{% static 'listings/CSS/ADMIN/admin-main.css'%}" />
+<link rel="stylesheet" href="{% static 'listings/CSS/ADMIN/admin-dashboard.css'%}" />
+<link rel="stylesheet" href="{% static 'listings/CSS/ranking.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+{% endblock head_inject %}
+{% block content %}
+<main>
+    {% for x in data %}
+    <div class="centred" id="my_container_seemore_{{x.index}}" style="display:none;">
+        <div class="card" data-state="#about{{x.index}}">
+            <div class="card-header">
+                <img class="card-avatar" src="{{ MEDIA_URL }}{{ x.logofiledata }}" alt="avatar" />
+                <h1 class="card-fullname">{{x.fname.capitalize}} {{x.lname.capitalize}}</h1>
+                <h2 class="card-jobtitle">{{x.activity.capitalize}}</h2>
+            </div>
+            <div class="card-main">
+                <div class="card-section is-active" id="about{{x.index}}">
+                    <div class="card-content">
+                        <div class="card-subtitle">A PROPOS</div>
+                        <p class="card-desc">{{x.description}}</p>
+                        <a href="{{ MEDIA_URL }}{{ x.cvfiledata }}" target="_blank">
+                            <button class="contact-me">Curriculum Vitae</button> <!-- Link to CV -->
+                        </a>
+                    </div>
+                </div>
+                <div class="card-section" id="experience{{x.index}}">
+                    <div class="card-content">
+
+                    </div>
+                </div>
+                <div class="card-section" id="contact{{x.index}}">
+                    <div class="card-content">
+                        <div class="card-subtitle">CONTACT</div>
+                        <div class="card-contact-wrapper">
+                            <div class="card-contact">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                {{x.city.capitalize}} - {{x.dep.capitalize}}
+                            </div>
+                            <div class="card-contact">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                                </svg>
+                                {{x.phone}}
+                            </div>
+                            <div class="card-contact">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                    <path d="M22 6l-10 7L2 6" />
+                                </svg>
+                                {{x.email}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-buttons">
+                    <button data-section="#about{{x.index}}" class="is-active">A PROPOS</button>
+                    <button data-section="#experience{{x.index}}">EXPERIENCE</button>
+                    <button data-section="#contact{{x.index}}">CONTACT</button>
+                </div>
+            </div>
+        </div>
+        <div class="container_background" id="container_background"></div>
+        <a class="overley-close-btn" onclick="close_see_more(x.index)">&times;</a>
+    </div>
+    {% endfor %}
+    <div id="main-wrapper" class="show my_wrapper">
+        <div class="data">
+            <div class="card-header responsive_flex" id="ranking-container">
+                <section class="table__body">
+                    <table id="">
+                        <thead>
+                            <tr>
+                                <th class="w1"> Classement</th>
+                                <th class="mw300"> Prénom & Nom</th>
+                                <th> Localisation</th>
+                                <th> Spécialité</th>
+                                <th> Status</th>
+                                <th class="centred mw150"> Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for x in data %}
+                            <tr>
+                                <td class="cursor-pointer" onclick="open_see_more(x.index)">
+                                    {% if x.index == 1 %}
+                                    {{x.index}}er
+                                    {% else %}
+                                    {{x.index}}ème
+                                    {% endif %}
+                                </td>
+                                <td class="cursor-pointer" onclick="open_see_more(x.index)" class="ml10"><img
+                                        src="{{ MEDIA_URL }}{{ x.logofiledata }}" alt="">{{x.fname.capitalize}}
+                                    {{x.lname.capitalize}}</td>
+                                <td class="cursor-pointer" onclick="open_see_more(x.index)">{{x.city.capitalize}} -
+                                    {{x.dep.capitalize}}</td>
+                                <td class="cursor-pointer" onclick="open_see_more(x.index)">{{x.activity.capitalize}}
+                                </td>
+                                <td class="cursor-pointer" onclick="open_see_more(x.index)">{{x.status.capitalize }}
+                                </td>
+                                <td class="tc">
+                                    <form method="POST" target="_self">
+                                        <select name="action" id="status" class="input-unit" required=""
+                                            style="border: 2px solid var(--primary);">
+                                            <option disabled="" selected="" value="">Select...</option>
+                                            <option value="valid">Valider</option>
+                                            <option value="delete">Supprimer</option>
+                                        </select>
+                                        <input type="hidden" name="user_key_action" value="{{x.user_key}}">
+                                        <input type="submit" />
+                                        {% csrf_token %}
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="main-wrapper" class="show my_wrapper">
+        <div class="data">
+            <div class="card-header responsive_flex" id="ranking-container">
+                <section class="table__body">
+                    <table id="">
+                        <thead>
+                            <tr>
+                                <th class="w1"> ID CONTACT</th>
+                                <th class="mw300"> Prénom & Nom</th>
+                                <th> Email</th>
+                                <th> Message</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for y in contact %}
+                            <tr>
+                                <td class="cursor-pointer">{{y.index}}</td>
+                                <td class="cursor-pointer" class="ml10">{{y.name.capitalize}}</td>
+                                <td class="cursor-pointer">{{y.email}}</td>
+                                <td class="cursor-pointer">{{y.message}}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="footer-container"></div>
+</main>
+{% endblock content %}
+{% block script %}
+<script src="{% static 'listings/JS/ADMIN/admin-dashboard.js'%}"></script>
+<script src="{% static 'listings/JS/ranking.js' %}"></script>
+{% endblock script %}

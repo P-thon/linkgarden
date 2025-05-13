@@ -1,0 +1,257 @@
+.main-form-container .description-text {
+width: 100% !important; 
+min-height: 150px;
+height: 45px;
+width: 100%;
+outline: none;
+font-size: 16px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid var(--pure);
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+padding-top: 10px;
+max-height: 300px;
+font-family: 'Poppins';
+}
+
+.main-form-container #AppBody, .main-form-container #AppBody2 {border:3px dotted #d1d6d6;height: 300px;margin-bottom: 30px;width: 100%;background-color: #2e2f32;box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;border-radius: 5px;display: flex;justify-content: center;align-items: center;flex-direction: column;}
+.main-form-container #AppBody:hover, .main-form-container #AppBody2:hover {cursor: pointer;}
+.main-form-container #AppBody.active, .main-form-container #AppBody2.active {border: 3px solid rgb(49, 168, 12);}
+.main-form-container #AppBody h3, .main-form-container #AppBody2 h3 {font-size: 30px;font-weight: 500;color: var(--pure);color: #fff;}
+.main-form-container #AppBody span, .main-form-container #AppBody2 span { font-size: 25px;font-weight: 500;color: #333;margin: 10px 0 15px 0;}
+.main-form-container #AppBody button, .main-form-container #AppBody2 button {padding: 10px 25px;font-size: 20px;font-weight: 500;border: none;outline: none;background: #fff;color: rgba(13, 204, 45, 0.651);border-radius: 5px;cursor: pointer; }
+.main-form-container #AppBody img, .main-form-container #AppBody2 img{height: 100%;width: 100%;object-fit: cover;border-radius: 5px;}
+.main-form-container .icon {margin-bottom: 10px;margin-right: 10px;}
+.main-form-container .input_result {color:red !important;margin-bottom: 20px;}
+.main-form-container .drag_drop_text {text-align:center;color: var(--pure);}
+.main-form-container .input-unit {
+height: 45px;
+width: 100%;
+outline: none;
+font-size: 16px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid var(--pure);
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+}
+
+.main-form-container .inputfield {
+display: flex;
+}
+
+.main-form-container .inputfield a {
+margin-left: 10px;
+color: var(--primary);
+}
+
+.main-form-container .inputfield .check{
+width: 15px;
+height: 15px;
+position: relative;
+display: block;
+cursor: pointer;
+margin-top: 5px;
+}
+
+.main-form-container .inputfield .check input[type="checkbox"]{
+position: absolute;
+top: 0;
+left: 0;
+opacity: 0;
+}
+.main-form-container .inputfield .check .checkmark{
+width: 15px;
+height: 15px;
+border: 1px solid var(--primary);
+display: block;
+position: relative;
+}
+.main-form-container .inputfield .check .checkmark:before{
+content: "";
+position: absolute;
+top: 1px;
+left: 2px;
+width: 5px;
+height: 2px;
+border: 2px solid;
+border-color: transparent transparent #fff #fff;
+transform: rotate(-45deg);
+display: none;
+}
+.main-form-container .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
+background: var(--primary);
+}
+
+.main-form-container .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
+display: block;
+}
+
+.footer-collones {
+    padding-top: 25px !important;
+}
+
+.margin-field {
+    margin-bottom: 25px;
+}
+
+.main-form-container{
+max-width: 700px;
+margin: 50px 20px;
+width: 100%;
+background-color: var(--gray);
+padding: 25px 30px;
+border-radius: 5px;
+box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.main-form-container .title{
+color: var(--primary);
+text-transform: uppercase;
+font-size: 25px;
+font-weight: 500;
+position: relative;
+}
+.main-form-container .title::before{
+content: "";
+position: absolute;
+left: 0;
+bottom: 0;
+color: var(--primary);
+height: 3px;
+width: 55px;
+border-radius: 5px;
+background: var(--gradient);
+}
+.main-form-container .content form .user-details{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+margin: 20px 0 12px 0;
+color: var();
+}
+.main-form-container form .user-details .input-box{
+margin-bottom: 15px;
+width: calc(100% / 2 - 20px);
+}
+.main-form-container form .input-box span.details{
+display: block;
+font-weight: 500;
+margin-bottom: 5px;
+color: var(--pure);
+}
+.main-form-container .user-details .input-box input{
+height: 45px;
+width: 100%;
+outline: none;
+font-size: 16px;
+border-radius: 5px;
+padding-left: 15px;
+border: 1px solid var(--pure);
+border-bottom-width: 2px;
+transition: all 0.3s ease;
+}
+.main-form-container .user-details .input-box input:focus, .main-form-container .user-details .input-box input:valid{
+border-color: var(--primary);
+}
+
+.main-form-container form .gender-details .gender-title{
+font-size: 20px;
+font-weight: 500;
+}
+
+.main-form-container form .category{
+display: flex;
+width: 80%;
+margin: 14px 0 ;
+justify-content: space-between;
+}
+.main-form-container form .category label{
+display: flex;
+align-items: center;
+cursor: pointer;
+}
+
+.main-form-container form .category label .dot{
+height: 18px;
+width: 18px;
+border-radius: 50%;
+margin-right: 10px;
+background: var(--pure);
+border: 5px solid transparent;
+transition: all 0.3s ease;
+}
+
+.main-form-container form input[type="radio"]{
+display: none;
+}
+
+.main-form-container form .button{
+height: 45px;
+margin: 35px 0
+}
+.main-form-container form .button input{
+height: 100%;
+width: 100%;
+border-radius: 5px;
+border: none;
+color: #fff;
+text-transform: uppercase;
+font-size: 18px;
+font-weight: 500;
+letter-spacing: 1px;
+cursor: pointer;
+background: var(--gradient)
+}
+
+.main-form-container form .button input:hover{
+background: var(--primary)
+}
+
+.gradiant_btn {
+    height: 100%;
+width: 100%;
+border-radius: 5px;
+border: none;
+color: #fff;
+text-transform: uppercase;
+font-size: 18px;
+font-weight: 500;
+letter-spacing: 1px;
+cursor: pointer;
+background: var(--gradient);
+
+}
+
+#result, #result2 {
+    text-align: center;
+}
+
+.gradiant_btn:hover {
+    background: var(--primary);
+}
+
+@media(max-width: 584px){
+.main-form-container{
+max-width: 100%;
+}
+.main-form-container form .user-details .input-box{
+margin-bottom: 15px;
+width: 100%;
+}
+.main-form-container form .category{
+width: 100%;
+}
+.main-form-container .content form .user-details{
+max-height: 300px;
+overflow-y: scroll;
+}
+.main-form-container .user-details::-webkit-scrollbar{
+width: 5px;
+}
+}
+@media(max-width: 459px){
+.main-form-container .content .category{
+flex-direction: column;
+}
+}

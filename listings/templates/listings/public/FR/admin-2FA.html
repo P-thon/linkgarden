@@ -1,0 +1,80 @@
+
+{% extends 'listings/public/main.html' %}
+{% load static %}
+{% block head_inject %}
+    <script src="{% static 'listings/JS/LIBRARY/aos.min.js'%}"></script>
+    <link rel="stylesheet" href="{% static 'listings/CSS/admin-2FA.css'%}"/>
+{% endblock head_inject %}
+{% block content %}
+<div class = "all-content">
+    <div class = "main-2FA-container">
+        <div class="centred ">
+            <div class="text">2FA CODE</div>
+        </div>
+        <div id = "main_container_rgba">
+            <form method="POST" target = "_self" class = "textleft">
+                <p class = "form_text">
+                    <input type = "submit" class = "form_button_left" name = "back" value = "< Retour">
+                    {% csrf_token %}
+                </p>
+            </form>
+            <div class = "centred">
+                <div class="container">
+                    <form method="POST" target = "_self" class = "main_form">
+                        <h3 class = "titlepage">Code :</h3>
+                        <div class = "otpcontainer">
+                            <div class="otp-field" id = "input_shake">
+                                <input type="text" maxlength="1" name="c1" required/>
+                                <input type="text" maxlength="1" name="c2" required/>
+                                <input type="text" maxlength="1" name="c3" required class="space"/>
+                                <input type="text" maxlength="1" name="c4" required/>
+                                <input type="text" maxlength="1" name="c5" required/>
+                                <input type="text" maxlength="1" name="c6" required class="space"/>
+                                <input type="text" maxlength="1" name="c7" required/>
+                                <input type="text" maxlength="1" name="c8" required/>
+                                <input type="text" maxlength="1" name="c9" required/>
+                            </div>
+                        </div>
+                        {% csrf_token %}
+                        <p class = "answer status-color">{{ status }}</p>
+                        <div class ="centred">
+                            <button type="submit" class="btnsubmit"><span>Vérifier</span></button>
+                        </div>
+                    </form>
+                    <form method="POST" target = "_self" class = "mt10">
+                        <p class="form_text mb25">
+                            <input type = "submit" class = "resendemail" name = "resend" value = "Vous n'avez pas reçu l'email ? Renvoyer.">
+                            {% csrf_token %}
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <button id = "top-button" class = "dn">^</button>
+        <button id="language-button" class="fixed-language-menu dn">
+            <p class = "seo-optimisation">Open language navbar</p>
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 516.000000 516.000000" preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0.000000,516.000000) scale(0.100000,-0.100000)" fill="#ffffff" stroke="none">
+                    <path d="M2335 4979 c-229 -25 -510 -99 -716 -189 -322 -141 -642 -378 -857 -633 -91 -108 -96 -119 -35 -74 81 59 109 67 237 67 125 0 256 28 424 90 119 43 247 46 422 8 69 -15 186 -33 261 -39 226 -20 445 15 566 88 212 128 370 163 467 104 52 -32 66 -73 66 -188 0 -84 -3 -103 -18 -116 -40 -37 -127 -14 -263 68 -93 57 -118 48 -140 -53 -13 -65 -52 -103 -168 -166 -92 -50 -112 -73 -97 -112 5 -14 16 -16 59 -11 72 7 160 38 307 108 69 32 136 59 148 59 58 0 140 -58 173 -123 50 -97 179 -197 337 -258 137 -54 163 -97 97 -163 -19 -19 -67 -54 -107 -77 -53 -30 -116 -84 -228 -194 -286 -281 -442 -394 -543 -395 -34 0 -45 6 -84 50 -51 57 -85 70 -186 70 -150 0 -221 -72 -221 -220 1 -55 7 -89 24 -128 24 -55 79 -112 108 -112 30 0 61 29 87 81 42 81 55 64 55 -74 0 -72 4 -100 21 -134 29 -61 94 -111 176 -135 37 -11 81 -31 97 -44 l28 -24 39 44 c55 62 98 80 171 72 128 -13 345 -103 628 -259 278 -154 356 -240 354 -397 -1 -169 -118 -328 -340 -461 -84 -50 -91 -59 -154 -180 -60 -115 -81 -131 -139 -105 -29 14 -43 15 -59 7 -22 -12 -77 -91 -116 -169 -62 -123 -174 -427 -162 -439 8 -8 160 31 291 74 701 230 1270 793 1513 1498 44 127 83 285 75 298 -4 7 -8 30 -9 52 -1 22 -5 66 -9 98 -6 45 -3 71 11 112 15 45 16 58 5 81 -11 25 -9 30 23 62 35 33 36 36 36 111 0 430 -138 888 -383 1269 l-59 92 -62 2 c-206 7 -308 -12 -440 -81 -120 -63 -161 -70 -224 -39 -60 30 -95 95 -123 234 -35 172 -77 218 -296 325 -166 82 -203 115 -203 182 0 88 63 142 165 141 50 -1 91 -13 240 -71 195 -77 285 -106 294 -97 15 15 -96 91 -238 162 -238 119 -481 198 -736 237 -122 19 -466 27 -590 14z"/>
+                    <path d="M640 3860 c-8 -5 -25 -10 -38 -10 -12 0 -30 -4 -40 -9 -9 -5 -24 -12 -34 -15 -25 -7 -178 -323 -226 -466 -81 -243 -118 -442 -129 -690 -27 -682 235 -1336 728 -1815 408 -397 909 -625 1479 -676 129 -11 377 -7 463 7 l37 7 0 51 c0 60 21 203 49 336 25 119 49 336 57 511 8 157 0 217 -56 409 -74 256 -122 452 -116 475 10 40 -5 57 -88 95 -45 21 -125 68 -179 104 -54 36 -146 91 -205 120 -130 65 -180 103 -340 260 -110 107 -124 126 -138 174 l-16 54 -37 -7 c-20 -4 -47 -9 -61 -12 -16 -3 -35 3 -52 17 -37 29 -93 147 -120 252 -22 84 -22 89 -5 117 53 90 -21 262 -231 544 -68 90 -99 110 -153 100 -13 -2 -61-7 -107 -11 l-83 -8 6 28 c4 18 2 28 -5 28 -7 0 -9 8 -5 22 9 27 -3 23 -105 -37 -63 -37 -80 -52 -98 -90 -27 -56 -27 -55 3 -55 14 0 25 -4 25 -9 0 -18 -12 -41 -22 -41 -5 0 -41 -19 -79 -41 -79 -47 -99 -47 -42 0 35 30 37 33 20 45 -10 8 -16 20 -15 27 2 9 -13 17 -44 23 -40 8 -47 13 -50 36 -6 39 -2 46 53 80 50 33 58 47 37 68 -14 14 -19 15 -38 2z"/>
+                </g>
+            </svg>
+        </button>
+        <div id="language-overlay" class="language-overlay">
+            <a class="close-btn" id = "close-language-menu">&times;</a>
+            <div class="language-overlay-content">
+                <form method="POST" target = "_self" class = "language-form">
+                    {% csrf_token %}
+                    <a><input type = "submit" name = "changelanguage" value = "French" class = "language-input"></a>
+                    <a><input type = "submit" name = "changelanguage" value = "English" class = "language-input"></a>
+                </form>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock content %}
+{% block script %}
+    <script src="{% static 'listings/JS/admin-2FA.js' %}"></script>
+{% endblock script %}

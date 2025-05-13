@@ -1,0 +1,3 @@
+SECRET_KEY = 'Va[%X>C2<pSUj7Q%Zn]-yR^N]yvic,K6qGwy@+IoN,_!85^n3Plbz$Bw_Ys46R1}'
+PRODUCTION = False
+DEVMODE = False

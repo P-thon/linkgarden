@@ -1,0 +1,298 @@
+{% extends 'listings/public/main.html' %}{% load static %}
+{% block head_inject %}
+
+        <script src="{% static 'listings/JS/LIBRARY/swiper.min.js' %}"></script>
+        <link rel="stylesheet" href="{% static 'listings/CSS/LIBRARY/swiper.min.css' %}">
+        <link rel="stylesheet" href="{% static 'listings/CSS/minimize_main.css' %}">
+        <link rel="stylesheet" href="{% static 'listings/CSS/website.css' %}">
+        <link rel="stylesheet" href="{% static 'listings/CSS/home.css' %}">
+
+{% endblock head_inject %}
+{% block content %}
+<nav class = "main-header-container">
+    <div class="header-container header-wrapper">
+        <div class="header-logo-blue">
+            <a>
+				<img src = "{% static 'listings/IMG/link-garden-logo.png' %}" class = "main-logo" style = "width:140pxpx;height:45px;"/>
+            </a>
+        </div>
+        <div class="hamburger" onclick = "swap_click();">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-list">
+            <li class="active">
+                <a href="{% url ''%}" id = "navlink" onclick = "bubble_click();">Accueil</a>
+            </li>
+            <li>
+                <a href="{% url 'ranking'%}" id = "navlink" onclick = "bubble_click();">Classement</a>
+            </li>
+            <li>
+                <a href="{% url 'register'%}" id = "navlink" onclick = "bubble_click();">Postuler</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="all-content">
+
+    <section id="top-section" class="homepage_style_1 top_magic_homepage_kind_1  old_homepage_layout_log old_homepage_layout_structure_log ">
+        <div class="home_background_wrapper">
+            <div class="home-image-bg "></div>
+        </div>
+        <div class="magic_homepage magic_homepage_kind_simple magic_homepage_kind_1 homepage-layout-24 container parent_simple_object_position_center_center">
+            <div class="home_main_wrapper main_ele_place_bottom simple_object_position_center_center" data-main-goal="buttons" data-second-goal="no">
+                <div class="box_container boxStyle_">
+                    <div class="hm-t-c boxBorder  ele_align_center">
+                        <p id="home_siteSlogan" class="animated fadeInDown weight700 background10 hm-txt">Link Garden</p>
+                        <h2 id="home_siteSlogan_2" class="animated fadeInDown weight400  shadow1  hm-txt" style="display:none"></h2>
+                        <p id="home_SecondSiteSlogan" class="animated fadeInDown weight400   background3 hm-txt">Trouvez le meilleur jardinier de vôtre région</p>
+                    </div>
+                    <div class="homepage_goal space_from_bottom_mainGoal ele_align_center mainGoal" style="position: relative;max-width: 100%;" data-type="buttons">
+                        <div class="promoButtons align_center">
+                            <a id="home_buttonText" class="btn" href = "{% url 'ranking'%}" data-w-helper-filter="buttons" aria-label="CHERCHER">
+                                <span class="h-b-container">
+                                    <span class="h-b-t">
+                                        <span class="h-b-t">CLASSEMENT</span>
+                                    </span>
+                                </span>
+                            </a>
+                            <a id="home_buttonText_1" class="btn" href = "{% url 'register'%}" data-w-helper-filter="buttons" aria-label="Postuler">
+                                <span class="h-b-container">
+                                    <span class="h-b-t">
+                                        <span class="h-b-t" id = "dz">POSTULER</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <svg id="homepageShapeDesign" class="shapeBottom" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path transform="" d="M0,100V0c0,0,48.3,118.2,100,0v100H0z"></path> 
+        </svg>
+    </section>
+
+    <!-- <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="h1 hero-title">LinkGarden</h1>
+                <p class="hero-text">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, officia id rerum vero, ea sit esse dolorum numquam aperiam eligendi error voluptas illo quas quod possimus veritatis enim, cum perferendis.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias harum enim a. Odio id blanditiis provident ad animi itaque commodi, in doloribus? Voluptatum laboriosam ea, cumque quis id iure quam!
+                </p>
+            </div>
+            <figure class="hero-banner">
+            <img src="{% static 'listings/IMG/ILLUSTRATION/hero-banner.png' %}" alt="Hero image">
+            </figure>
+        </div>
+    </section> -->
+    <section>
+        <div class = "centred">
+            <h2 class = "h2 about-title">SERVICES</h2>
+        </div>
+        <div class = "centred">
+            <div class="btn-group">
+                <div class = "centred_at_900">
+                    <div>
+                        <div class = "centred">
+                            <img class = "img-icon" src = "{% static 'listings/IMG/ILLUSTRATION/classement.png' %}"/>
+                        </div>
+                        <p class = "text-icon">Pour sublimer votre jardin, choisissez le meilleur jardinier, paysagiste, élagueur ou pisciniste de votre région. Ou laissez une chance aux novices pour des petits travaux à moindre coût.</p>
+                        <div class = "centred mt50">
+                            <a href = "{% url 'ranking'%}"><button class="my-btn btn-primary">Classement</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class = "centred_at_900">
+                    <div>
+                        <div class = "centred">
+                            <img class = "img-icon" src = "{% static 'listings/IMG/ILLUSTRATION/postuler.png' %}"/>
+                        </div>
+                        <p class = "text-icon"> Postulez, et devenez le meilleur dans votre activité, et dans votre région. Et pour ça gagnez le plus d'avis positifs possibles pour monter dans le classement.</p>
+                        <div class = "centred mt50">
+                            <a href = "{% url 'register'%}"><button class="my-btn btn-secondary">Postuler</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 
+        <section class="hero mt50" id="hero">
+            <div class="container">
+                <figure class="hero-banner">
+                    <img src="{% static 'listings/IMG/ILLUSTRATION/hero-banner.png' %}" alt="Hero image">
+                </figure>
+                <div class="hero-content">
+                    <div class="center">
+                        <h2 class="h2 hero-title" style = "text-align:left;">À PROPOS</h2>
+                    </div>
+                    <p class="hero-text">
+                        Link Garden permet aux sociétés de jardinages ou aux indépendants qui souhaitent travailler dans le jardinage de gagner en visibilité. Pour une fois, pas besoin d'avoir de l'expérience, les novices ont une activité réservée pour eux, "les petits travaux". 
+                        Comme tout travail mérite récompense, en plus de la rémunération, vous aurez la possibilité de monter dans le classement grâce à un système d'avis et donc de gagner encore plus en visibilité à condition de bien travailler. 
+                        Et pour ceux qui ont la chance d'avoir un jardin, Link Garden va vous permettre de trouver le meilleur jardinier, paysagiste, élagueur, ou pisciniste de votre région, grâce à un classement qui s'actualise constamment.
+                    </p>
+                </div>
+            </div>
+        </section> 
+    -->
+    <section class = "main-vision-container">
+        <div class="centred">
+            <h2 class="h2 hero-title">À PROPOS</h2>
+        </div>
+        <div class = "vision-content vision-background">
+            <div class = "vision-container-left">
+
+                <div class="main-qualityservices-container swiper">
+                    <div class="slide-content2">
+                        <div class="card-wrapper swiper-wrapper">
+                            <div class="card swiper-slide addslide background_morphism">
+                                <img src = "{% static 'listings/IMG/ILLUSTRATION/slider-1.png' %}" class = "animation-icon" alt = "Icône animé qui illustre le processus de personnalisation de notre entreprise de Développement Web.">
+                            </div>
+                            <div class="card swiper-slide addslide background_morphism" >
+                                <img src = "{% static 'listings/IMG/ILLUSTRATION/slider-2.png' %}" class = "animation-icon" alt = "Icône animé qui illustre la mise en oeuvre de moyen important pour sécuriser les applications SDEV.">
+                            </div>
+                            <div class="card swiper-slide addslide background_morphism" >
+                                <img src = "{% static 'listings/IMG/ILLUSTRATION/slider-3.png' %}" class = "animation-icon" alt = "Icône animé qui illustre la mise en oeuvre de moyen important pour sécuriser les applications SDEV.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class = "vision-container-right">
+                <div class = "centred mt20-special">
+                    <div class="vision-img">                   
+                        <p class="hero-text">
+                        Link Garden permet aux sociétés de jardinages ou aux indépendants qui souhaitent travailler dans le jardinage de gagner en visibilité. Pour une fois, pas besoin d'avoir de l'expérience, les novices ont une activité réservée pour eux, "les petits travaux". 
+                        Comme tout travail mérite récompense, en plus de la rémunération, vous aurez la possibilité de monter dans le classement grâce à un système d'avis et donc de gagner encore plus en visibilité à condition de bien travailler. 
+                        Et pour ceux qui ont la chance d'avoir un jardin, Link Garden va vous permettre de trouver le meilleur jardinier, paysagiste, élagueur, ou pisciniste de votre région, grâce à un classement qui s'actualise constamment.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="centred mb30 mt50">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bB6UhkLR4eQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="container">
+
+            <h2 class="h2 section-title">NOUS CONTACTER</h2>
+
+            <p class="section-text">
+                N'hésitez pas à nous contacter si vous avez besoin d'informations supplémentaires.
+            </p>
+
+            <div class = "centred">
+
+                <div class="contact-wrapper df">
+
+                    <form action="" class="contact-form">
+
+                        <div class="wrapper-flex">
+
+                            <div class="input-wrapper">
+                            <label for="name">Name*</label>
+
+                            <input type="text" name="name" id="name" maxlength="64" required="" placeholder="Enter Your Name" class="input-field">
+                            </div>
+
+                            <div class="input-wrapper">
+                            <label for="emai">Email*</label>
+
+                            <input type="text" name="email" id="email" maxlength="64" required="" placeholder="Enter Your Email" class="input-field">
+                            </div>
+
+                        </div>
+
+                        <label for="message">Message*</label>
+
+                        <textarea name="message" id="message" maxlength="1024" required="" placeholder="Type Your Message" class="input-field"></textarea>
+
+                        <div class = "centred">
+                            <button type="submit" class="my-btn btn-primary mt25">
+                                <span>Send Message</span>
+
+                                <ion-icon name="paper-plane-outline" role="img" class="md hydrated" aria-label="paper plane outline"></ion-icon>
+                            </button>
+                        </div>
+
+                    </form>
+        
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <footer class = "main-footer-container">
+        <div class = "footer-container">
+            <div class = "footer-collones">
+                <div class = "collone-1">
+                    <h3 class = "footer-title">MENTIONS LÉGALES :</h3>
+                    <div class = "sub-column">
+                        <p>
+                            <a href = "{% url ''%}" onclick = "swap_click();"><strong>INFORMATIONS LÉGALES</strong></a><br>
+                            <a href = "{% url ''%}" onclick = "swap_click();"><strong>À PROPOS DE NOUS</strong></a><br>
+                            <a href = "{% url ''%}" onclick = "swap_click();"><strong>NOUS CONTACTER</strong></a><br>
+                        </p>
+                    </div>
+                </div>
+                <div class = "collone-3">
+                    <h3 class = "footer-title">RÉSEAUX SOCIAUX :</h3>
+                    <div class = "sub-column">
+                        <p>
+                            <a href = "https://www.instagram.com/link.garden/" target = "_blank" onclick = "swap_click();">
+                                <svg fill="#ffffff" class = "mr10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="20px" height="20px">
+                                    <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"/>
+                                </svg>
+                                <strong>INSTAGRAM</strong>
+                            </a><br>
+                            <a href = "https://www.linkedin.com/in/paulkarst" target = "_blank" onclick = "swap_click();">
+                                <svg class = "mr10" width="25" height="25" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18.72 3.99997H5.37C5.19793 3.99191 5.02595 4.01786 4.86392 4.07635C4.70189 4.13484 4.55299 4.22471 4.42573 4.34081C4.29848 4.45692 4.19537 4.59699 4.12232 4.75299C4.04927 4.909 4.0077 5.07788 4 5.24997V18.63C4.01008 18.9901 4.15766 19.3328 4.41243 19.5875C4.6672 19.8423 5.00984 19.9899 5.37 20H18.72C19.0701 19.9844 19.4002 19.8322 19.6395 19.5761C19.8788 19.32 20.0082 18.9804 20 18.63V5.24997C20.0029 5.08247 19.9715 4.91616 19.9078 4.76122C19.8441 4.60629 19.7494 4.466 19.6295 4.34895C19.5097 4.23191 19.3672 4.14059 19.2108 4.08058C19.0544 4.02057 18.8874 3.99314 18.72 3.99997ZM9 17.34H6.67V10.21H9V17.34ZM7.89 9.12997C7.72741 9.13564 7.5654 9.10762 7.41416 9.04768C7.26291 8.98774 7.12569 8.89717 7.01113 8.78166C6.89656 8.66615 6.80711 8.5282 6.74841 8.37647C6.6897 8.22474 6.66301 8.06251 6.67 7.89997C6.66281 7.73567 6.69004 7.57169 6.74995 7.41854C6.80986 7.26538 6.90112 7.12644 7.01787 7.01063C7.13463 6.89481 7.2743 6.80468 7.42793 6.74602C7.58157 6.68735 7.74577 6.66145 7.91 6.66997C8.07259 6.66431 8.2346 6.69232 8.38584 6.75226C8.53709 6.8122 8.67431 6.90277 8.78887 7.01828C8.90344 7.13379 8.99289 7.27174 9.05159 7.42347C9.1103 7.5752 9.13699 7.73743 9.13 7.89997C9.13719 8.06427 9.10996 8.22825 9.05005 8.3814C8.99014 8.53456 8.89888 8.6735 8.78213 8.78931C8.66537 8.90513 8.5257 8.99526 8.37207 9.05392C8.21843 9.11259 8.05423 9.13849 7.89 9.12997ZM17.34 17.34H15V13.44C15 12.51 14.67 11.87 13.84 11.87C13.5822 11.8722 13.3313 11.9541 13.1219 12.1045C12.9124 12.2549 12.7546 12.4664 12.67 12.71C12.605 12.8926 12.5778 13.0865 12.59 13.28V17.34H10.29V10.21H12.59V11.21C12.7945 10.8343 13.0988 10.5225 13.4694 10.3089C13.84 10.0954 14.2624 9.98848 14.69 9.99997C16.2 9.99997 17.34 11 17.34 13.13V17.34Z" fill="#fff"/>
+                                </svg>
+                                <strong class = "mb3">LINKEDIN</strong>
+                            </a><br>
+                            <a href = "https://www.tiktok.com/@linkgarden" target = "_blank" onclick = "swap_click();">
+                                <svg fill="#fff" class = "mr10" width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21,2H3A1,1,0,0,0,2,3V21a1,1,0,0,0,1,1H21a1,1,0,0,0,1-1V3A1,1,0,0,0,21,2Zm-3.281,8.725h0c-.109.011-.219.016-.328.017A3.571,3.571,0,0,1,14.4,9.129v5.493a4.061,4.061,0,1,1-4.06-4.06c.085,0,.167.008.251.013v2a2.067,2.067,0,1,0-.251,4.119A2.123,2.123,0,0,0,12.5,14.649l.02-9.331h1.914A3.564,3.564,0,0,0,17.719,8.5Z"/></svg>
+                                <strong >TIKTOK</strong>
+                            </a><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class = "signature">
+                <p>© 2022 : link-garden.com, Inc.<br> Tous droits réservés.</p>
+            </div>
+            <button id = "top-button" class = "dn">^</button>
+            <button id="language-button" class="fixed-language-menu dn">
+                <p class = "seo-optimisation">Open language navbar</p>
+                <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 516.000000 516.000000" preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,516.000000) scale(0.100000,-0.100000)" fill="var(--primary)" stroke="none">
+                        <path d="M2335 4979 c-229 -25 -510 -99 -716 -189 -322 -141 -642 -378 -857 -633 -91 -108 -96 -119 -35 -74 81 59 109 67 237 67 125 0 256 28 424 90 119 43 247 46 422 8 69 -15 186 -33 261 -39 226 -20 445 15 566 88 212 128 370 163 467 104 52 -32 66 -73 66 -188 0 -84 -3 -103 -18 -116 -40 -37 -127 -14 -263 68 -93 57 -118 48 -140 -53 -13 -65 -52 -103 -168 -166 -92 -50 -112 -73 -97 -112 5 -14 16 -16 59 -11 72 7 160 38 307 108 69 32 136 59 148 59 58 0 140 -58 173 -123 50 -97 179 -197 337 -258 137 -54 163 -97 97 -163 -19 -19 -67 -54 -107 -77 -53 -30 -116 -84 -228 -194 -286 -281 -442 -394 -543 -395 -34 0 -45 6 -84 50 -51 57 -85 70 -186 70 -150 0 -221 -72 -221 -220 1 -55 7 -89 24 -128 24 -55 79 -112 108 -112 30 0 61 29 87 81 42 81 55 64 55 -74 0 -72 4 -100 21 -134 29 -61 94 -111 176 -135 37 -11 81 -31 97 -44 l28 -24 39 44 c55 62 98 80 171 72 128 -13 345 -103 628 -259 278 -154 356 -240 354 -397 -1 -169 -118 -328 -340 -461 -84 -50 -91 -59 -154 -180 -60 -115 -81 -131 -139 -105 -29 14 -43 15 -59 7 -22 -12 -77 -91 -116 -169 -62 -123 -174 -427 -162 -439 8 -8 160 31 291 74 701 230 1270 793 1513 1498 44 127 83 285 75 298 -4 7 -8 30 -9 52 -1 22 -5 66 -9 98 -6 45 -3 71 11 112 15 45 16 58 5 81 -11 25 -9 30 23 62 35 33 36 36 36 111 0 430 -138 888 -383 1269 l-59 92 -62 2 c-206 7 -308 -12 -440 -81 -120 -63 -161 -70 -224 -39 -60 30 -95 95 -123 234 -35 172 -77 218 -296 325 -166 82 -203 115 -203 182 0 88 63 142 165 141 50 -1 91 -13 240 -71 195 -77 285 -106 294 -97 15 15 -96 91 -238 162 -238 119 -481 198 -736 237 -122 19 -466 27 -590 14z"/>
+                        <path d="M640 3860 c-8 -5 -25 -10 -38 -10 -12 0 -30 -4 -40 -9 -9 -5 -24 -12 -34 -15 -25 -7 -178 -323 -226 -466 -81 -243 -118 -442 -129 -690 -27 -682 235 -1336 728 -1815 408 -397 909 -625 1479 -676 129 -11 377 -7 463 7 l37 7 0 51 c0 60 21 203 49 336 25 119 49 336 57 511 8 157 0 217 -56 409 -74 256 -122 452 -116 475 10 40 -5 57 -88 95 -45 21 -125 68 -179 104 -54 36 -146 91 -205 120 -130 65 -180 103 -340 260 -110 107 -124 126 -138 174 l-16 54 -37 -7 c-20 -4 -47 -9 -61 -12 -16 -3 -35 3 -52 17 -37 29 -93 147 -120 252 -22 84 -22 89 -5 117 53 90 -21 262 -231 544 -68 90 -99 110 -153 100 -13 -2 -61-7 -107 -11 l-83 -8 6 28 c4 18 2 28 -5 28 -7 0 -9 8 -5 22 9 27 -3 23 -105 -37 -63 -37 -80 -52 -98 -90 -27 -56 -27 -55 3 -55 14 0 25 -4 25 -9 0 -18 -12 -41 -22 -41 -5 0 -41 -19 -79 -41 -79 -47 -99 -47 -42 0 35 30 37 33 20 45 -10 8 -16 20 -15 27 2 9 -13 17 -44 23 -40 8 -47 13 -50 36 -6 39 -2 46 53 80 50 33 58 47 37 68 -14 14 -19 15 -38 2z"/>
+                    </g>
+                </svg>
+            </button>
+            <div id="language-overlay" class="language-overlay">
+                <a class="close-btn" id = "close-language-menu">&times;</a>
+                <div class="language-overlay-content">
+                    <form method="POST" target = "_self" class = "language-form">
+                        {% csrf_token %}
+                        <a><input type = "submit" name = "changelanguage" value = "French" class = "language-input"></a>
+                        <a><input type = "submit" name = "changelanguage" value = "English" class = "language-input"></a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+{% endblock content %}
+{% block script %}
+    <script src="{% static 'listings/JS/home.js' %}"></script>
+{% endblock script %}

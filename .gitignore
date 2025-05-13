@@ -1,0 +1,5 @@
+/env
+/nginx.txt
+/listings/__pycache__/*
+/sdev/__pycache__/*
+/linkgarden/__pycache__/*

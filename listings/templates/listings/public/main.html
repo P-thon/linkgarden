@@ -1,0 +1,126 @@
+<!DOCTYPE html> {% load static %}
+{% spaceless %}
+<html lang="{{ default_language }}" dir="ltr">
+
+<head>
+    {% if default_title|length > 0 %}
+    <title>{{ default_title }}</title>
+    {% else %}
+    <title>Link Garden</title>
+    {% endif %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="&copy; Link-Garden" />
+    <meta name="copyright" content="© 2023 : link-garden.com, Inc." />
+    <meta name="language" content="{{ default_language }}" />
+    <meta name="publisher" content="&copy; Link-Garden" />
+    <meta name="theme-color" content="#228b22" />
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow,nosnippet" />
+    <meta name="google" content="notranslate,nositelinkssearchbox" />
+    <meta name="google-site-verification" content="" />
+    <meta name="msvalidate.01" content="" />
+    {% if description|length > 0 %}
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:description" content="{{ description }}">
+    {% else %}
+    <meta name="description" content="Avec Link Garden, trouvez votre jardinier préféré !" />
+    <meta property="og:description" content="Avec Link Garden, trouvez votre jardinier préféré !">
+    {% endif %}
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta property="og:title" content="Link Garden" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://link-garden.com/">
+    <meta property="og:image" content="{% static 'listings/IMG/ILLUSTRATION/main-hero-1.png' %}" />
+    <meta property="og:locale" content="{{ default_language }}">
+    <meta property="og:site_name" content="Link Garden">
+    <meta property="twitter:site" content="@linkgarden" />
+    <meta property="twitter:site:id" content="@linkgarden" />
+    <meta property="twitter:creator" content="@linkgarden" />
+    <meta property="twitter:creator:id" content="@linkgarden" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:image" content="{% static 'listings/IMG/ILLUSTRATION/main-hero-1' %}" />
+    <style>
+        .status-color {
+            color:
+                status_color !important;
+        }
+    </style>
+    </style>
+    <link rel="stylesheet" href="{% static 'listings/CSS/main.css'%}" />
+    <link rel="icon" type="img/ico" href="{% static 'listings/IMG/favicon.ico' %}">
+    {% block head_inject %}{% endblock head_inject %}
+</head>
+
+<body class="loading-container min-width-body background-dark">
+    <main class="currently-loading" id="content">
+        {% block content %}{% endblock content %}
+        <section class="main-notification-popup">
+            <div class="notif-toast dn" id="notification-system">
+                <div class="notif-toast-content">
+                    <svg class="check" versiron="1.0" xmlns="http://www.w3.org/2000/svg" width="96.000000pt"
+                        height="96.000000pt" viewBox="0 0 96.000000 96.000000" preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,96.000000) scale(0.100000,-0.100000)" fill="var(--primary)"
+                            stroke="none">
+                            <path
+                                d="M440 860 c-11 -11 -20 -30 -20 -43 0 -17 -10 -28 -40 -41 -50 -22 -113 -93 -128 -144 -7 -22 -12 -100 -12 -175 l0 -135 -40 -32 c-41 -32 -49 -57 -28 -78 17 -17 599 -17 616 0 21 21 13 46 -28 78 l-40 32 0 135 c0 75 -5 153 -12 175 -15 51 -78 122 -128 144 -30 13 -40 24 -40 41 0 28 -33 63 -60 63 -11 0 -29 -9 -40 -20z" />
+                            <path
+                                d="M181 825 c-90 -103 -128 -273 -59 -263 25 4 31 15 53 89 9 31 34 79 56 108 42 55 46 70 27 89 -21 21 -45 13 -77 -23z" />
+                            <path
+                                d="M702 848 c-18 -18 -15 -37 14 -70 32 -39 69 -114 78 -157 8 -42 23 -61 47 -61 65 0 26 164 -62 265 -32 36 -56 44 -77 23z" />
+                            <path
+                                d="M400 145 c0 -27 47 -65 80 -65 33 0 80 38 80 65 0 12 -15 15 -80 15 -65 0 -80 -3 -80 -15z" />
+                        </g>
+                    </svg>
+                    <div id="notif-message" data-value="{{ status }}">
+                        <span class="notif-text notif-text-1">NOTIFICATION</span>
+                        <span class="notif-text notif-text-2 status-color">{{ status }}</span>
+                    </div>
+                </div>
+                <button class="notif-close">X</button>
+                <div class="notif-progress"></div>
+            </div>
+        </section>
+        <section class="main-cookie-popup">
+            <div class="cookie-popup-content-1">
+                <div class="cookie-popup-header">
+                    <div class="cookie-popup-header-left">
+                        <p>Bienvenue Humain !</p>
+                        <span>Nous sommes les cookies</span>
+                    </div>
+                    <div class="cookie-popup-header-right">
+                        <img src="{% static 'listings/IMG/ILLUSTRATION/cookie_img.png'%}" class="cookie-popup-img"
+                            alt="Image représentant un cookie (Un vrai).">
+                    </div>
+                </div>
+                <div class="cookie-popup-body">
+                    <p>Link Garden mène une <strong>politique zéro tracker</strong>. Cependant, nous sommes forcés de
+                        récolter certaines informations qui permettent de vous identifier. Ces informations n'ont
+                        aucunement un but commercial. Elles servent uniquement à la sécurité et au bon fonctionnement du
+                        site tout en <strong>respectent votre vie privé</strong>.</p>
+                </div>
+                <div class="cookie-popup-footer">
+                    <button class="cookie-btn-no">Non merci</button>
+                    <a class="cookie-btn-choose" href="#">En savoir plus</a>
+                    <button class="cookie-btn-ok" id="cookie-btn-ok">D'accord !</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="main-loader">
+        <div class="loader-wrapper" id="loader">
+            <div class="loader">
+                <div class="loader loader--inner"></div>
+            </div>
+        </div>
+    </section>
+    <audio src="{% static 'listings/MUSIC/bubble_click.mp3'%}" id="bubble_click" controls class="dn" defer></audio>
+    <audio src="{% static 'listings/MUSIC/swap_click.mp3'%}" id="swap_click" controls class="dn" defer></audio>
+    <audio src="{% static 'listings/MUSIC/refused_click.mp3'%}" id="refused_click" controls class="dn" defer></audio>
+    <script src="{% static 'listings/JS/main.js' %}"></script>
+    {% block script %}{% endblock script %}
+</body>
+
+</html>
+{% endspaceless %}

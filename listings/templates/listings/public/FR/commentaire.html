@@ -1,0 +1,104 @@
+{% extends 'listings/public/main.html' %}{% load static %}
+{% block head_inject %}
+<link rel="stylesheet" href="{% static 'listings/CSS/ranking.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+{% endblock head_inject %}
+{% block content %}
+<div id="feedback-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="close-modal">&times;</span>
+        <h2>Laissez votre avis</h2>
+
+        <form id="feedback-form">
+            <!-- Ligne 1 -->
+            <div class="feedback-line">
+                <label for="question1">Question 1:</label>
+                <div class="star-widget">
+                    <input type="radio" name="rating1" id="rate1-5" value="5" />
+                    <label for="rate1-5" class="star">★</label>
+                    <input type="radio" name="rating1" id="rate1-4" value="4" />
+                    <label for="rate1-4" class="star">★</label>
+                    <input type="radio" name="rating1" id="rate1-3" value="3" />
+                    <label for="rate1-3" class="star">★</label>
+                    <input type="radio" name="rating1" id="rate1-2" value="2" />
+                    <label for="rate1-2" class="star">★</label>
+                    <input type="radio" name="rating1" id="rate1-1" value="1" />
+                    <label for="rate1-1" class="star">★</label>
+                </div>
+            </div>
+
+            <!-- Répétez cette structure pour les autres questions -->
+            <div class="feedback-line">
+                <label for="question2">Question 2:</label>
+                <div class="star-widget">
+                    <input type="radio" name="rating2" id="rate2-5" value="5" />
+                    <label for="rate2-5" class="star">★</label>
+                    <input type="radio" name="rating2" id="rate2-4" value="4" />
+                    <label for="rate2-4" class="star">★</label>
+                    <input type="radio" name="rating2" id="rate2-3" value="3" />
+                    <label for="rate2-3" class="star">★</label>
+                    <input type="radio" name="rating2" id="rate2-2" value="2" />
+                    <label for="rate2-2" class="star">★</label>
+                    <input type="radio" name="rating2" id="rate2-1" value="1" />
+                    <label for="rate2-1" class="star">★</label>
+                </div>
+            </div>
+
+            <!-- Ajoutez 3 autres lignes de la même manière -->
+            <div class="feedback-line">
+                <label for="question1">Question 3:</label>
+                <div class="star-widget">
+                    <input type="radio" name="rating3" id="rate1-5" value="5" />
+                    <label for="rate1-5" class="star">★</label>
+                    <input type="radio" name="rating3" id="rate1-4" value="4" />
+                    <label for="rate1-4" class="star">★</label>
+                    <input type="radio" name="rating3" id="rate1-3" value="3" />
+                    <label for="rate1-3" class="star">★</label>
+                    <input type="radio" name="rating3" id="rate1-2" value="2" />
+                    <label for="rate1-2" class="star">★</label>
+                    <input type="radio" name="rating3" id="rate1-1" value="1" />
+                    <label for="rate1-1" class="star">★</label>
+                </div>
+            </div>
+
+            <div class="feedback-line">
+                <label for="question1">Question 4:</label>
+                <div class="star-widget">
+                    <input type="radio" name="rating4" id="rate1-5" value="5" />
+                    <label for="rate1-5" class="star">★</label>
+                    <input type="radio" name="rating4" id="rate1-4" value="4" />
+                    <label for="rate1-4" class="star">★</label>
+                    <input type="radio" name="rating4" id="rate1-3" value="3" />
+                    <label for="rate1-3" class="star">★</label>
+                    <input type="radio" name="rating4" id="rate1-2" value="2" />
+                    <label for="rate1-2" class="star">★</label>
+                    <input type="radio" name="rating4" id="rate1-1" value="1" />
+                    <label for="rate1-1" class="star">★</label>
+                </div>
+            </div>
+
+
+            <div class="feedback-line">
+                <label for="question1">Question 5:</label>
+                <div class="star-widget">
+                    <input type="radio" name="rating5" id="rate1-5" value="5" />
+                    <label for="rate1-5" class="star">★</label>
+                    <input type="radio" name="rating5" id="rate1-4" value="4" />
+                    <label for="rate1-4" class="star">★</label>
+                    <input type="radio" name="rating5" id="rate1-3" value="3" />
+                    <label for="rate1-3" class="star">★</label>
+                    <input type="radio" name="rating5" id="rate1-2" value="2" />
+                    <label for="rate1-2" class="star">★</label>
+                    <input type="radio" name="rating5" id="rate1-1" value="1" />
+                    <label for="rate1-1" class="star">★</label>
+                </div>
+            </div>
+
+            <button type="submit" id="submit-feedback">Envoyer</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+{% block script %}
+<script src="{% static 'listings/JS/ranking.js' %}"></script>
+{% endblock script %}

@@ -1,0 +1,73 @@
+<!DOCTYPE html> {% load static %}
+{% spaceless %}
+<html lang = "en-US" dir = "ltr">
+    <head>
+        {% if default_title|length > 0 %}
+        <title>{{ default_title }}</title>
+        {% else %}
+        <title>SpunkyDev > Ban</title>
+        {% endif %}
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="author" content="&copy; SpunkyDev"/>
+        <meta name="copyright" content="© 2023 : link-garden.com, Inc."/>
+        <meta name="language" content="{{ default_language }}"/>
+        <meta name="publisher" content="&copy; SpunkyDev"/>
+        <meta name="theme-color" content="#00095f"/>
+        <meta name="robots" content="index,follow"/>
+        <meta name="googlebot" content="index,follow,nosnippet"/>
+        <meta name="google" content="notranslate,nositelinkssearchbox"/>
+        <meta name="google-site-verification" content=""/>
+        <meta name="msvalidate.01" content="" />
+        <meta name="description" content="{{ description }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <meta property="og:title" content="Link Garden"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content="https://link-garden.com/">
+        <meta property="og:image" content="{% static 'listings/IMG/ILLUSTRATION/hero.png' %}"/>
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:locale" content="{{ default_language }}">
+        <meta property="og:site_name" content="Link Garden">
+        <meta property="twitter:site" content="@link" />
+        <meta property="twitter:site:id" content="@linkgarden" />
+        <meta property="twitter:creator" content="@linkgarden" />
+        <meta property="twitter:creator:id" content="@linkgarden" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:image" content="{% static 'listings/IMG/ILLUSTRATION/main-hero.png' %}"/>
+        <link rel="icon" type="img/ico" href="{% static 'listings/IMG/favicon.ico' %}">
+        <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;background:#eee;height:100vh;display:grid;place-items:center}.currently-loading{display:none}.main-loader .loader-wrapper{width:100px;height:100px}.main-loader .loader{width:100%;height:100%;border:5px solid #D3D3D3;border-top-color:#00095f;border-bottom-color:#00095f;border-radius:50%;animation:rotate 5s linear infinite}.main-loader .loader--inner{border-top-color:#00095f;border-bottom-color:#00095f;animation-duration:2.5s}@keyframes rotate{0%{transform:scale(1) rotate(360deg)}50%{transform:scale(.8) rotate(-360deg)}100%{transform:scale(1) rotate(360deg)}}.main-ban-container{max-width:620px;width:100%;min-width:375px;margin:50px auto 0;border-radius:5px}.main-ban-container .mt30{margin-top:30px}.main-ban-container .description-text{color:inherit;padding:0;margin:30px 0 0}.main-ban-container .content-box{background:#fff;background:hsla(0,0%,100%,.75);border-radius:5px;box-shadow:0 1px 2px rgba(0,0,0,.05);padding:40px;border:1px solid #e1e1e1}.main-ban-container .site-footer{text-align:center;margin:40px 0;font-size:12px;color:#888;text-shadow:0 1px 0 hsla(0,0%,100%,.75)}@media (max-width:700px){.main-ban-container{width:100%;margin:0 auto 0}.main-ban-container h1{font-size:16px}.main-ban-container .info-text{font-size:14px}.main-ban-container .ban-text{font-size:18px}.main-ban-container .description-text{font-size:12px}.main-ban-container .content-box{width:100%;padding:15px}}</style>
+    </head>
+    <body data-nosnippet>
+        <main class="main-ban-container loading-container currently-loading" id = "content">
+            <div class="content-box">
+                <div class="site-header">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" class="main-logo lightver" width="85" viewBox="0 0 1600.000000 1600.000000" preserveAspectRatio="xMidYMid meet" alt = "SpunkyDev Logo">
+                        <g transform="translate(0.000000,1600.000000) scale(0.100000,-0.100000)" fill="#00095f" stroke="none">
+                            <path d="M1898 10166 c-384 -167 -649 -503 -707 -893 -14 -92 -14 -249 0 -350 40 -297 211 -565 490 -766 114 -82 378 -214 584 -292 425 -160 587 -232 702 -314 134 -95 187 -189 187 -336 1 -69 -4 -89 -31 -148 -42 -88 -113 -156 -218 -208 -113 -55 -210 -73 -365 -66 -289 13 -376 42 -830 279 -201 105 -426 222 -500 261 -74 38 -163 85 -198 104 l-62 34 -65 -56 c-58 -51 -63 -59 -53 -78 17 -33 466 -765 506 -827 56 -86 158 -181 237 -222 145 -75 481 -177 705 -213 149 -24 549 -25 676 -2 429 80 785 342 948 698 72 160 101 335 86 535 -31 418 -218 702 -619 941 -131 78 -290 150 -546 246 -595 223 -756 331 -819 547 -24 80 -22 219 4 301 23 75 83 172 136 218 l35 31 1187 -2 1187 -3 3 -1731 2 -1731 218 -6 c334 -10 1460 -8 1617 3 359 26 651 125 942 321 265 179 492 446 642 753 108 222 162 402 208 701 l8 50 110 0 110 0 3 -911 2 -911 227 -6 c293 -9 1918 -9 2231 0 l242 6 0 344 0 343 -960 0 -960 0 0 560 0 560 483 0 482 0 200 160 c110 88 200 165 200 172 0 20 -385 308 -414 309 -14 0 -37 2 -51 3 -14 1 -222 3 -463 4 l-437 2 2 483 3 482 1230 2 1230 3 39 -103 c68 -178 84 -219 136 -352 28 -71 123 -317 212 -545 88 -228 212 -548 275 -710 62 -162 154 -398 203 -525 49 -126 150 -387 225 -580 75 -192 158 -409 186 -481 l50 -131 185 -8 c101 -4 267 -4 369 0 l184 8 15 41 c8 22 57 154 109 291 186 490 260 683 347 915 49 129 137 361 195 515 180 476 285 753 350 925 35 91 102 269 150 395 48 127 147 390 220 585 73 195 138 367 144 383 l11 27 -437 -2 -436 -3 -99 -270 c-128 -348 -248 -678 -360 -985 -191 -524 -260 -714 -343 -940 -47 -129 -106 -289 -130 -355 -89 -244 -103 -280 -111 -276 -10 4 -104 251 -419 1106 -63 169 -86 233 -216 583 -101 273 -148 400 -214 577 -36 99 -99 267 -138 373 l-72 192 -1937 0 -1938 0 0 -810 0 -810 -129 0 -128 0 -17 80 c-39 181 -131 417 -228 587 -281 492 -760 835 -1307 934 -100 18 -191 19 -2370 19 l-2266 0 -77 -34z m4379 -602 c345 -51 645 -225 841 -489 111 -149 212 -387 249 -585 25 -133 24 -446 -1 -585 -94 -522 -420 -907 -887 -1049 -180 -54 -249 -61 -689 -60 -223 0 -412 2 -420 6 -13 5 -15 167 -12 1392 l2 1386 406 0 c316 0 430 -3 511 -16z"/>
+                        </g>
+                    </svg>
+                </div>
+                <h1 class = "ban-text">You have been temporarily ban.</h1>
+                <div class="site-content">
+                    <div class="cf-error-details cf-error-1020">
+                        <h4 class = "info-text mt30">You will be unban at: {{expiration_date}}</h4>
+                        <h4 class = "info-text">Reason: {{reason}}</h4>
+                        <p class = "description-text">Your suspicious activity make you ban from our website. If you think this is a mistake, contact us (specify your ip address): unban@spunkydev.com</p>
+                    </div> 
+                <div class="site-footer">
+                    &copy; Spunkydev.com
+                </div>
+                </div>
+            </div>
+        </main>
+        <section class = "main-loader">
+            <div class="loader-wrapper" id = "loader">
+                <div class="loader">
+                    <div class="loader loader--inner"></div>
+                </div>
+            </div>
+        </section>
+        <script>try{window.addEventListener('load', () => {document.getElementById("content").classList.remove('currently-loading');document.body.classList.remove('loading-container');document.getElementById("loader").classList.add('currently-loading')});}catch{console.warn("SDEV - Can't load loader.")}</script>
+    </body>
+</html>
+{% endspaceless %}
